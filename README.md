@@ -19,3 +19,7 @@ Setup Table for SQLite3
 Run App 
 1. run `sh ./start-app.sh`
 2. or `uvicorn main:app --reload`
+
+Several problems were found in this development
+1. I dont get any free API for convert value USD to IDR, so i use harcode on calculation
+2. I always deploy with railways, google cloud vps, but my git account trial is expired. sorry i can't deploy the system.
