@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "1c61e710-0e69-41e5-b256-b9843f709540",
+		"name": "CriptoTracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21651354"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_name\": \"Hans Parson\",\r\n    \"email\": \"hansparson014@gmail.com\",\r\n    \"password\": \"123qweasd\",\r\n    \"confirmation_password\" : \"123qweasd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/create-user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"create-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignIn",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"hansparson014@gmail.com\",\r\n    \"password\": \"123qweasd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/sign-in",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"sign-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignOut",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJIYW5zIFBhcnNvbiIsInVzZXJfaWQiOiI0YmY5N2EzNy05MWU0LTQ0MDQtYjQ5NS0wMjA4YTI5NmU0MmEiLCJlbWFpbCI6ImhhbnNwYXJzb24wMTRAZ21haWwuY29tIiwiZXhwIjoxNzA0NjE5NjY2fQ.sUsWVg2BYpg7ZgWY2CK5Wt8kQGvahAIrxUaiGMngJEU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/sign-out",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"sign-out"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddCoinsTracker",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJIYW5zIFBhcnNvbiIsInVzZXJfaWQiOiIwZDBlOWZjNC1kNzcwLTRiZTgtODViYS05ZDljMWFlNzJiM2EiLCJlbWFpbCI6ImhhbnNwYXJzb24wMTRAZ21haWwuY29tIiwiZXhwIjoxNzA0NjIyODA1fQ.7KQ_0mj6O96Cqb_JBozI4pdkN3jZ4ciAM_oQFlkYAxE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"add_coins\" :\r\n        [\r\n            \"bitcoin\", \"ethereum\"\r\n        ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/add-coin-tracker",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"add-coin-tracker"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListTrackedCoins",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJIYW5zIFBhcnNvbiIsInVzZXJfaWQiOiIwZDBlOWZjNC1kNzcwLTRiZTgtODViYS05ZDljMWFlNzJiM2EiLCJlbWFpbCI6ImhhbnNwYXJzb24wMTRAZ21haWwuY29tIiwiZXhwIjoxNzA0NjI3MjU3fQ.Kmy-PBMvIs4aXFn0JvsdscYNljfQWXp_eTr9TyF2kTk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/list-tracked-coins",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"list-tracked-coins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CoinCapAsset",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.coincap.io/v2/assets",
+					"host": [
+						"api",
+						"coincap",
+						"io"
+					],
+					"path": [
+						"v2",
+						"assets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveCoinsTracker",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJIYW5zIFBhcnNvbiIsInVzZXJfaWQiOiIwZDBlOWZjNC1kNzcwLTRiZTgtODViYS05ZDljMWFlNzJiM2EiLCJlbWFpbCI6ImhhbnNwYXJzb24wMTRAZ21haWwuY29tIiwiZXhwIjoxNzA0NjI4Mzk5fQ.BdHQUMjHhdEfKlRp4SsdWr4Lq2CYIpt2lfUydsNgkxQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"remove_coins\" :\r\n        [\r\n            \"bitcoin\"\r\n        ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/remove-coin-tracker",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"remove-coin-tracker"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
